@@ -23,7 +23,7 @@ RSpec.describe "Landing Home", type: :feature do
     
     within("#5cf5679a915ecad153ab68da") do
       expect(page).to have_content("Name: Azula")
-      expect(page).to have_content("Portrait")
+      expect(page).to have_xpath("//img[@src = 'https://vignette.wikia.nocookie.net/avatar/images/1/12/Azula.png/revision/latest?cb=20140905084941']")
       expect(page).to have_content("Allies: Ozai, Zuko")
       expect(page).to have_content("Enemies: Iroh, Zuko, Kuei, Long Feng, Mai, Ty Lee, Ursa")
       expect(page).to have_content("Affiliation: Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
@@ -31,7 +31,7 @@ RSpec.describe "Landing Home", type: :feature do
 
     within("#5cf5679a915ecad153ab692b") do
       expect(page).to have_content("Name: Fire Nation train engineer")
-      expect(page).to have_content("Portrait")
+      expect(page).to have_xpath("//img[@src = 'https://vignette.wikia.nocookie.net/avatar/images/c/ca/Train_engineer.png/revision/latest?cb=20130308171418']")
       expect(page).to have_content("Allies: Aang")
       expect(page).to have_content("Enemies: Combustion Man")
       expect(page).to have_content("Affiliation: Fire Nation Fire Nation train")

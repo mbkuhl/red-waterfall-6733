@@ -5,7 +5,7 @@
 <% @populace[0..24].each do |character| %>
   <div id="<%= character.id %>"> <br>
     <h3><%= "Name: #{character.name}" %> </h3>
-    <%= "Portrait" %><img src= <%= "#{character.photo_url}" %> height="200" >
+    <img src= <%= "#{character.photo_url}" %> height="200" > <br>
     <%= "Allies: #{character.allies.join(", ")}" %> <br>
     <%= "Enemies: #{character.enemies.join(", ")}" %> <br>
     <%= "Affiliation: #{character.affiliation}" %> <br>
