@@ -1,21 +1,12 @@
-class MarketService
+class Service
 
-  def market_conn
+  def conn
     Faraday.new(url: "https://last-airbender-api.fly.dev")
   end
 
-  def get_characters
-    response = market_conn.get("/api/v1/characters")
+  def search_nation(query)
+    response = conn.get("/api/v1/characters#{query}")
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_market(id)
-    response = market_conn.get("/api/v0/markets/#{id}")
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def search_markets(query)
-    response = market_conn.get("/api/v0/markets/search#{query}")
-    JSON.parse(response.body, symbolize_names: true)
-  end
 end
