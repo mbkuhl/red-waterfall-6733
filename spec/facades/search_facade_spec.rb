@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SearchFacade do
-  it "can create an array of character objects from API data" do
+  it "can create an array of character objects from API data", :vcr do
     sf = SearchFacade.new
     populace = sf.nation_index("fire+nation")
     populace.each do |character|

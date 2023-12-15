@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe CharacterObject do
-  it "Exists and has attributes" do
+  it "Exists and has attributes", :vcr do
     service = Service.new
     query = "?affiliation=fire+nation"
     char_data = service.search_nation(query).first

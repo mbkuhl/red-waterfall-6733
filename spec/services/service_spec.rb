@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Service do
-  it "retrieves api details about a characters with a specific affiliation" do
+  it "retrieves api details about a characters with a specific affiliation", :vcr do
     service = Service.new
     query = "?affiliation=fire+nation"
     json = service.search_nation(query)

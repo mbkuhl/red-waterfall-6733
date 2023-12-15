@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Landing Home", type: :feature do
 
-  it "Will give a dropdown field with the four nations that will search for members of that nation" do
+  it "Will give a dropdown field with the four nations that will search for members of that nation", :vcr do
     visit "/"
 
     expect(page).to  have_content("Search For Members by their Nation")
@@ -14,7 +14,7 @@ RSpec.describe "Landing Home", type: :feature do
     expect(current_path).to eq("/search")
   end
 
-  it "Search index view has the total number of fire nation characters, and detailed information on the first 25" do
+  it "Search index view has the total number of fire nation characters, and detailed information on the first 25", :vcr do
     visit "/"
     select "Fire Nation", from: :nation
     click_button "Search For Members"
