@@ -5,7 +5,7 @@ class Service
   end
 
   def search_nation(query)
-    response = conn.get("/api/v1/characters#{query}")
+    response = conn.get("/api/v1/characters#{query}&perPage=497&page=1")
     JSON.parse(response.body, symbolize_names: true)
   end
 

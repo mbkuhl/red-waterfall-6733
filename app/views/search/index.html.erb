@@ -1,0 +1,13 @@
+<h1><%= "#{@nation} affiliates" %></h1>
+<p><%= "#{@nation} population: #{@populace.count}" %></p>
+
+<h2>First 25 members:</h2>
+<% @populace[0..24].each do |character| %>
+  <div id="<%= character.id %>"> <br>
+    <h3><%= "Name: #{character.name}" %> </h3>
+    <%= "Portrait" %><img src= <%= "#{character.photo_url}" %> height="200" >
+    <%= "Allies: #{character.allies.join(", ")}" %> <br>
+    <%= "Enemies: #{character.enemies.join(", ")}" %> <br>
+    <%= "Affiliation: #{character.affiliation}" %> <br>
+  </div>
+<% end %>
